@@ -15,6 +15,13 @@ const config: HardhatUserConfig = {
   ...getHardhatConfig({ accounts: [process.env.PRIVATE_KEY] }),
   solidity: {
     compilers: [{ version: "0.8.20" }, { version: "0.8.26" }],
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+      viaIR: true,
+    },
   },
 };
 
